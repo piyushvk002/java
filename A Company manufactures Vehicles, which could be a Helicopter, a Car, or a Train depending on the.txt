@@ -1,0 +1,52 @@
+import java.util.Scanner;
+// Abstract class representing a Vehicle
+abstract class Vehicle {
+ abstract void move();
+}
+// Concrete class representing a Helicopter
+class Helicopter extends Vehicle {
+ @Override
+ void move() {
+ System.out.println("The Helicopter flies in the air.");
+ }
+}
+// Concrete class representing a Car
+class Car extends Vehicle {
+ @Override
+ void move() {
+ System.out.println("The Car drives on the road.");
+ }
+}
+// Concrete class representing a Train
+class Train extends Vehicle {
+ @Override
+ void move() {
+ System.out.println("The Train runs on the track.");
+ }
+}
+public class Lab4 {
+ public static void main(String[] args) {
+ Scanner scanner = new Scanner(System.in);
+ System.out.println("Please enter the type of vehicle you want to order:");
+ System.out.println("1. Helicopter");
+ System.out.println("2. Car");
+ System.out.println("3. Train");
+ int choice = scanner.nextInt();
+ Vehicle vehicle;
+ switch (choice) {
+ case 1:
+ vehicle = new Helicopter();
+ break;
+ case 2:
+ vehicle = new Car();
+ break;
+ case 3:
+ vehicle = new Train();
+ break;
+ default:
+ System.out.println("Invalid choice. Please try again.");
+ return;
+ }
+ vehicle.move();
+ }
+}

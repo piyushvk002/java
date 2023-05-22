@@ -1,0 +1,15 @@
+class Arithmetic {
+ int add(int a, int b) {
+ return a + b;
+ }
+}
+class Adder extends Arithmetic {
+}
+public class Lab6 {
+ public static void main(String[] args) {
+ Adder adder = new Adder();
+ System.out.println("My superclass is: Arithmetic");
+ int sum = adder.add(42, 13);
+ System.out.println(sum);
+ }
+}

@@ -1,0 +1,33 @@
+import java.util.Arrays;
+import java.util.Scanner;
+public class Lab17 {
+ public static void main(String[] args) {
+ Scanner scanner = new Scanner(System.in);
+ // Read 10 strings from the console
+ System.out.println("Enter 10 strings:");
+ String[] strings = new String[10];
+ for (int i = 0; i < 10; i++) {
+ strings[i] = scanner.nextLine();
+ }
+ // Sort the strings in alphabetical order
+ Arrays.sort(strings);
+ // Print the sorted strings
+ System.out.println("\nSorted strings:");
+ for (String str : strings) {
+ System.out.println(str);
+ }
+ // Combine two strings
+ String combinedString = strings[0] + strings[1];
+ System.out.println("\nCombined string: " + combinedString);
+ // Reverse the first string
+ String reversedString = reverseString(strings[0]);
+ System.out.println("\nReversed string: " + reversedString);
+ scanner.close();
+ }
+ // Function to reverse a string
+ public static String reverseString(String str) {
+ StringBuilder reversed = new StringBuilder(str);
+ reversed.reverse();
+ return reversed.toString();
+ }
+}

@@ -1,0 +1,51 @@
+Class Name: Person
+Member variables:
+Name, age
+Class Name: Employee
+Member variables:
+Designation, salary
+import java.util.Scanner;
+class Person {
+ protected String name;
+ protected int age;
+ public void acceptData() {
+ Scanner scanner = new Scanner(System.in);
+ System.out.print("Enter name: ");
+ name = scanner.nextLine();
+ System.out.print("Enter age: ");
+ age = scanner.nextInt();
+ scanner.nextLine(); // Consume the newline character
+ }
+}
+class Employee extends Person {
+ private double salary;
+ public void acceptData() {
+ super.acceptData();
+ Scanner scanner = new Scanner(System.in);
+ System.out.print("Enter salary: ");
+ salary = scanner.nextDouble();
+ scanner.nextLine(); // Consume the newline character
+ }
+ public boolean hasSalaryGreaterThan5000() {
+ return salary > 5000;
+ }
+}
+public class Lab18 {
+ public static void main(String[] args) {
+ Employee[] employees = new Employee[5];
+ // Accept data for 5 employees
+ Scanner scanner = new Scanner(System.in);
+ for (int i = 0; i < employees.length; i++) {
+ System.out.println("Enter details for Employee " + (i + 1) + ":");
+ employees[i] = new Employee();
+ employees[i].acceptData();
+ }
+ // Display names of employees with salary greater than 5000
+ System.out.println("\nEmployees with salary greater than 5000:");
+ for (Employee employee : employees) {
+ if (employee.hasSalaryGreaterThan5000()) {
+ System.out.println(employee.name);
+ }
+ }
+ }
+}

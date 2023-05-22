@@ -1,0 +1,16 @@
+public class Lab2_2 {
+public static void main(String[] args) {
+ // create a string
+ String txt = "umbrella";
+ String str1 = "y";
+ // check if name is present in txt
+ // using contains()
+ boolean result = txt.contains(str1);
+ if(result) {
+ System.out.println(str1 + " is present in the string.");
+ }
+ else {
+ System.out.println(str1 + " is not present in the string.");
+ }
+ }
+}

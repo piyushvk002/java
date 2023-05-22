@@ -1,0 +1,42 @@
+class Insaan {
+ private String firstName;
+ private String lastName;
+ public Insaan(String firstName, String lastName) {
+ this.firstName = firstName;
+ this.lastName = lastName;
+ }
+ public String getFirstName() {
+ return firstName;
+ }
+ public String getLastName() {
+ return lastName;
+ }
+}
+class Worker extends Insaan {
+ private String employeeId;
+ private String jobTitle;
+ public Worker(String firstName, String lastName, String employeeId, String
+jobTitle) {
+ super(firstName, lastName);
+ this.employeeId = employeeId;
+ this.jobTitle = jobTitle;
+ }
+ public String getEmployeeId() {
+ return employeeId;
+ }
+ public String getLastName() {
+ return super.getLastName() + " (" + jobTitle + ")";
+ }
+}
+public class Lab22 {
+ public static void main(String[] args) {
+ Insaan person = new Insaan("John", "Doe");
+ System.out.println("First Name: " + person.getFirstName());
+ System.out.println("Last Name: " + person.getLastName());
+ System.out.println();
+ Worker employee = new Worker("Jane", "Smith", "E123", "Manager");
+ System.out.println("First Name: " + employee.getFirstName());
+ System.out.println("Last Name: " + employee.getLastName());
+ System.out.println("Employee ID: " + employee.getEmployeeId());
+ }
+}
